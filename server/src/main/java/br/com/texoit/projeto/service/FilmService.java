@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
 import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,6 +97,7 @@ public class FilmService {
     */
     @Transactional()
     public HashMap<String, ArrayList<Indicated>> findlistOfNominees() {
+        
         HashMap<String, ArrayList<Indicated>> map = new HashMap<>();
         ArrayList<Indicated> min = this.buildIndicated(this.filmRepository.findMinIndicated());
         ArrayList<Indicated> max = this.buildIndicated(this.filmRepository.findMaxIndicated());
@@ -107,13 +109,12 @@ public class FilmService {
 
     private ArrayList<Indicated> buildIndicated(List<Object[]> list) {
         ArrayList<Indicated> listIndicated = new ArrayList<>();
-        for (Object[] item : list) {
-            Indicated indicated = new Indicated(String.valueOf(item[0]),
-                    String.valueOf(item[3]),
-                    String.valueOf(item[1]),
-                    String.valueOf(item[2]));
-            listIndicated.add(indicated);
-        }
+        for (Object[] film : list) {
+            listIndicated.add(new Indicated(film[0].toString(),
+                                            film[3].toString(), 
+                                            film[1].toString(), 
+                                            film[2].toString()));
+            }       
         return listIndicated;
     }
 }

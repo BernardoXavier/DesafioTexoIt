@@ -15,21 +15,21 @@ public class Indicated implements Serializable {
 	
     private String producer;
 
-    private Integer interval;
+    private String interval;
 
-    private Integer previuosWin;
+    private String previuosWin;
     
-    private Integer followingWin;
+    private String followingWin;
 
 	public Indicated(String producer, String interval, String previuosWin, String followingWin) {
 		super();
 		this.producer = producer;
-		this.interval = Integer.parseInt(interval);
-		this.previuosWin = Integer.parseInt(previuosWin);
-		this.followingWin = Integer.parseInt(followingWin);
+		this.interval = interval;
+		this.previuosWin = previuosWin;
+		this.followingWin = followingWin;
     }
 
-    public static long getSerialversionuid() {
+	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
@@ -41,27 +41,27 @@ public class Indicated implements Serializable {
 		this.producer = producers;
 	}
 
-	public Integer getInterval() {
+	public String getInterval() {
 		return interval;
 	}
 
-	public void setInterval(Integer interval) {
+	public void setInterval(String interval) {
 		this.interval = interval;
 	}
 
-	public Integer getPreviuosWin() {
+	public String getPreviuosWin() {
 		return previuosWin;
 	}
 
-	public void setPreviuosWin(Integer previuosWin) {
+	public void setPreviuosWin(String previuosWin) {
 		this.previuosWin = previuosWin;
 	}
 
-	public Integer getFollowingWin() {
+	public String getFollowingWin() {
 		return followingWin;
 	}
 
-	public void setFollowingWin(Integer followingWin) {
+	public void setFollowingWin(String followingWin) {
 		this.followingWin = followingWin;
 	}
 	

@@ -54,7 +54,7 @@ public class Film implements Serializable {
 	this.winner = winner;
 	}
 
-	public Integer getId() {
+    public Integer getId() {
 		return id;
 	}
 
@@ -102,5 +102,13 @@ public class Film implements Serializable {
 	public void setWinner(String winner) {
 		this.winner = winner;
 	}
+
+	@Override
+	public String toString() {
+		return "Film [id=" + id + ", year=" + year + ", title=" + title + ", studios=" + studios + ", producers="
+				+ producers + ", winner=" + winner + "]";
+	}
+
+	
 	
 }
